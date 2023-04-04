@@ -11,113 +11,44 @@ const resetBtn = document.getElementById('reset');
 
 let cocktails = [];
 let baseArray = ['Vodka', 'Gin', 'Tequila', 'Whiskey', 'Rum'];
-// let ingredientArray = ['Triple Sec', 'Campari', 'Vermouth', 'Bitters', 'Lemon Juice', 'Lime Juice', 'Ginger Beer', 'Sugar', 'Grapefruit', 'Cranberry', 'Pineapple', 'Mint', 'Grenadine', 'Honey', 'Sparkling Wine', 'Tomato Juice'];
 
 
 //Fetch for cocktail files and manipulate data
 fetch("http://localhost:3000/Cocktails")
 .then(resp => resp.json())
-.then(data => {
-    cocktails = data
-})
+.then(data => { cocktails = data })
 
+
+//BUTTONS
+
+//Handles Start Button
 startBtn.addEventListener('click', () => {
     renderBaseLiquor(baseArray);
     startBtn.hidden = true;
 })
 
+//Handles Bartop Rendering
+shakeBtn.addEventListener('click', renderBartop);
+
+//Handles Randomizer
+pleaseBtn.addEventListener('click', () => {
+    let id = Math.floor(Math.random() * 26)
+    let randomCocktail = cocktails.find(cocktail => cocktail.id === id);
+
+    renderDrinkToBartop(randomCocktail);
+});
+
+//Handles Reset
+resetBtn.addEventListener('click', () => {
+    resetWell();
+    bartop.innerHTML = "";
+})
 
 
-//Function Library
+//SETS DRAG AND DROP EVENTS
 
-//Grabs unique indredients for each base
-function grabIngredients(liquor) {
-    let ingredients = [];
-    let drinks = cocktails.filter(drink => drink.base === liquor);
-    drinks.forEach((drink) => {
-        if (typeof drink.ingredient1 === 'string') {
-        ingredients.push(drink.ingredient1)
-        };
-        
-        if (typeof drink.ingredient2 === 'string') {
-            ingredients.push(drink.ingredient2)
-        };
-    })
-
-    ingredients = new Set(ingredients);
-    return ingredients;
-}
-
-//Render Base Liquor buttons to Well
-function renderBaseLiquor(array) {
-    let h3 = document.createElement('h3');
-    h3.textContent = 'Pick a Base';
-    well.append(h3);
-    
-    array.forEach((item) => {
-        let btn = document.createElement('button');
-        btn.textContent = item;
-        btn.draggable = true;
-        btn.classList.add('draggables')
-        btn.setAttribute('id', `${item}`);
-
-        btn.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', e.target.id);
-            setTimeout(() => {e.target.hidden = true;})
-        }, 0)        
-
-        well.append(btn);
-    })
-}
-
-//Renders ingredient elements to well
-function renderIngredients(array) {
-    let h3 = document.createElement('h3');
-    h3.textContent = 'Pick 2 Ingredients';
-    well.append(h3);
-    
-    array.forEach((item) => {
-        let btn = document.createElement('button');
-        btn.textContent = item;
-        btn.draggable = true;
-        btn.classList.add('draggables')
-        btn.setAttribute('id', `${item}`);
-
-        btn.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', e.target.id);
-            setTimeout(() => {e.target.hidden = true;})
-        }, 0)        
-
-        well.append(btn);
-    })
-}
-
-
-
-//Drag and Drop functions
-function dragEnter(e) {
-    e.preventDefault();
-};
-
-function dragOver(e) {
-    e.preventDefault();
-};
-
-function dragLeave(e) {
-    //console.log(e)
-};
-
-
-//HANDLES DRAG AND DROP
-
-//Make below into function
-well.addEventListener('dragenter', dragEnter);
-well.addEventListener('dragover', dragOver);
-well.addEventListener('dragleave', dragLeave);
-
-shaker.addEventListener('dragenter', dragEnter);
-shaker.addEventListener('dragover', dragOver);
-shaker.addEventListener('dragleave', dragLeave);
+addDragEvents(well);
+addDragEvents(shaker);
 
 well.addEventListener('drop', (e) => {
     
@@ -143,8 +74,81 @@ shaker.addEventListener('drop', (e) => {
     e.target.appendChild(draggable);
 })
 
-//Handles Bartop Rendering
-shakeBtn.addEventListener('click', renderBartop);
+
+//FUNCTION LIBRARY
+
+//Render Base Liquor buttons to Well
+function renderBaseLiquor(array) {
+    let h3 = document.createElement('h3');
+    h3.textContent = 'Pick a Base';
+    well.append(h3);
+    
+    renderDraggables(array)
+}
+
+//Renders ingredient buttons to Well once Base liquor is selected
+function renderIngredients(array) {
+    let h3 = document.createElement('h3');
+    h3.textContent = 'Pick 2 Ingredients';
+    well.append(h3);
+    
+    renderDraggables(array);
+}
+
+//Render Draggables
+function renderDraggables(array) {
+    array.forEach((item) => {
+        let btn = document.createElement('button');
+        btn.textContent = item;
+        btn.draggable = true;
+        btn.classList.add('draggables')
+        btn.setAttribute('id', `${item}`);
+
+        btn.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            setTimeout(() => {e.target.hidden = true;})
+        }, 0)        
+
+        well.append(btn);
+    })
+}
+
+//Grabs unique indredients for each drink by base liquor
+function grabIngredients(liquor) {
+    let ingredients = [];
+    let drinks = cocktails.filter(cocktail => cocktail.base === liquor);
+    drinks.forEach((drink) => {
+        if (typeof drink.ingredient1 === 'string') {
+        ingredients.push(drink.ingredient1)
+        };
+        
+        if (typeof drink.ingredient2 === 'string') {
+            ingredients.push(drink.ingredient2)
+        };
+    })
+
+    ingredients = new Set(ingredients);
+    return ingredients;
+}
+
+//Drag and Drop functions
+function dragEnter(e) {
+    e.preventDefault();
+};
+
+function dragOver(e) {
+    e.preventDefault();
+};
+
+function dragLeave(e) {
+    //console.log(e)
+};
+
+function addDragEvents(div) {
+div.addEventListener('dragenter', dragEnter);
+div.addEventListener('dragover', dragOver);
+div.addEventListener('dragleave', dragLeave);
+};
 
 //Renders Drink to Bartop
 function renderBartop() {
@@ -154,9 +158,9 @@ function renderBartop() {
         shakerIngredients.push(element.textContent);
     })
     
-    let drinks = cocktails.filter(drink => drink.base === shakerIngredients[0]);
+    let drinksByBase = cocktails.filter(cocktail => cocktail.base === shakerIngredients[0]);
     
-    let matchingDrink = drinks.find((drink) => {
+    let matchingDrink = drinksByBase.find((drink) => {
         let values = Object.values(drink);
 
         if (shakerIngredients.length === 2) {
@@ -172,6 +176,7 @@ function renderBartop() {
     renderDrinkToBartop(matchingDrink);
 }
 
+//Renders Full details to bartop div
 function renderDrinkToBartop(cocktail) {
     bartop.innerHTML = "";
 
@@ -187,32 +192,17 @@ function renderDrinkToBartop(cocktail) {
         base = `Base Liquor: ${cocktail.base}`;
         desc = `Description: ${cocktail.description}`;
 
-        bartop.append(name, img, base, desc);
+        bartop.append(img, name, base, desc);
    
     } else {
         let h3 = document.createElement('h3');
-        h3.textContent = 'How creative!  Unfortunately your beverage does not match any in our database at this time.  Hit reset to try again!'
+        h3.textContent = 'How creative!  Unfortunately, we will be unable to serve you your fine concoction at this time.  Hit reset to try again!'
 
         bartop.append(h3);
     }
 }
 
-//HANDLES RANDOMIZER
-
-pleaseBtn.addEventListener('click', () => {
-    let id = Math.floor(Math.random() * 26)
-    let randomCocktail = cocktails.find(cocktail => cocktail.id === id);
-
-    renderDrinkToBartop(randomCocktail);
-});
-
-//HANDLES RESET
-
-resetBtn.addEventListener('click', () => {
-    resetWell();
-    bartop.innerHTML = "";
-})
-
+//Clears the shaker and resets the well to base liquor draggables
 function resetWell(){
     well.innerHTML = "";
     shaker.innerHTML = "";
