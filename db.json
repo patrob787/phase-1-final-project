@@ -1,0 +1,229 @@
+{
+    "Cocktails": [
+        {
+            "id": 1,
+            "name": "Cosmopolitan",
+            "base": "Vodka",
+            "ingredient1": "Triple Sec",
+            "ingredient2": "Cranberry Juice",
+            "description": "A cosmopolitan is a vodka cocktail made with triple sec, cranberry juice, and lime juice. The drink was invented in the 1930s, but rose in popularity in the 1990s.  The use of citrus flavored vodka as the basis for this cocktail appears to have been widely popularized in the mid 1990s by Dale DeGroff. However, many bartenders continue to use a standard unflavored vodka and this alternative would undoubtedly be historically consistent with any of the supposed predecessors of this drink that were popular in Ohio, Provincetown, or Minneapolis during the 1970s, or in San Francisco during the 1980s.  A lemon twist is sometimes used to garnish.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/kpsajh1504368362.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Lemon Drop",
+            "base": "Vodka",
+            "ingredient1": "Triple Sec",
+            "ingredient2": "Lemon Juice",
+            "description": "A lemon drop is a vodka-based cocktail that has a lemony, sweet and sour flavor, prepared using lemon juice, triple sec and simple syrup. It is typically prepared and served straight up, chilled with ice and strained.  The drink was invented sometime in the 1970s by Norman Jay Hobday, the founder and proprietor of Henry Africa's bar in San Francisco, California.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Moscow Mule",
+            "base": "Vodka",
+            "ingredient1": "Lime Juice",
+            "ingredient2": "Ginger Beer",
+            "description": "A Moscow mule is a cocktail made with vodka, ginger beer and lime juice, garnished with a slice or wedge of lime and a sprig of mint. Though the drink is associated with Russia (for obvious reasons), it's actually an American invention that dates back to the 1940s.  The Moscow mule is popularly served in a copper mug, which takes on the cold temperature of the liquid.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Sea Breeze",
+            "base": "Vodka",
+            "ingredient1": "Cranbery Juice",
+            "ingredient2": "Grapefruit Juice",
+            "description": "A sea breeze is a cocktail containing vodka with cranberry juice and grapefruit juice.  The cocktail was born in the late 1920s, but the recipe was different from the one used today, as gin and grenadine were used in the original sea breeze.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/7rfuks1504371562.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Bloody Mary",
+            "base": "Vodka",
+            "ingredient1": "Tomato Juice",
+            "ingredient2": "Lime Juice",
+            "description": "A Bloody Mary is a cocktail containing vodka, tomato juice, and other spices and flavorings including Worcestershire sauce, hot sauces, horseradish, celery, olives, lemon juice, lime juice and celery salt.  The Bloody Mary was invented in the 1920s or 1930s.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bloody_Mary_Coctail_with_celery_stalk_-_Evan_Swigart.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Margarita",
+            "base": "Tequila",
+            "ingredient1": "Triple Sec",
+            "ingredient2": "Lime Juice",
+            "description": "A margarita is a cocktail consisting of Tequila, triple sec, and lime juice. Some margarita recipes include simple syrup as well and are often served with salt on the rim of the glass.  The margarita is one of the world's most popular cocktails and the most popular Tequila based cocktail.",
+            "image": "https://www.thespruceeats.com/thmb/EVG7Qteq-KsvcmhOb1ox_-sP9gA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-fresh-margarita-cocktail-recipe-759317-HERO-3cf566b4a4084aedb904cf18ad3c6c35.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Tequila Sunrise",
+            "base": "Tequila",
+            "ingredient1": "Orange Juice",
+            "ingredient2": "Grenadine",
+            "description": "The tequila sunrise is a cocktail made of tequila, orange juice, and grenadine syrup. The drink is served unmixed in a tall glass. The modern drink originates from Sausalito, California, in the early 1970s after an earlier iteration created in the 1930s in Phoenix, Arizona. The cocktail is named for its appearance when served—with gradations of color resembling a sunrise.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/quqyqp1480879103.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Paloma",
+            "base": "Tequila",
+            "ingredient1": "Grapefruit Juice",
+            "ingredient2": "Lime Juice",
+            "description": "The paloma (Spanish for 'dove') is a tequila-based cocktail. This drink is most commonly prepared by mixing tequila, lime juice, and a grapefruit-flavored soda such as Fresca or Jarritos and served on the rocks with a lime wedge.  Alternatively, the grapefruit soda can be replaced with fresh white or red grapefruit juice.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/samm5j1513706393.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Siesta Cocktail",
+            "base": "Tequila",
+            "ingredient1": "Campari",
+            "ingredient2": "Grapefruit Juice",
+            "description": "The Siesta cocktail is a modern cocktail made with tequila, Campari, grapefruit juice, and lime juice. It was invented in 2006 by New York mixologist Katie Stipe.",
+            "image": "https://www.acouplecooks.com/wp-content/uploads/2021/05/Siesta-Cocktail-001.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Bloody Maria",
+            "base": "Tequila",
+            "ingredient1": "Tomato Juice",
+            "ingredient2": "Lime Juice",
+            "description": "This take on the popular Bloody Mary cocktail replaces the traditional Vodka base with Tequila.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/yz0j6z1504389461.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Dry Martini",
+            "base": "Gin",
+            "ingredient1": "Vermouth",
+            "ingredient2": null,
+            "description": "The martini is a cocktail made with gin and vermouth, and garnished with an olive or a lemon twist. Over the years, the martini has become one of the best-known mixed alcoholic beverages. A popular variation, the vodka martini, uses vodka instead of gin for the cocktail's base spirit.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Negroni",
+            "base": "Gin",
+            "ingredient1": "Vermouth",
+            "ingredient2": "Campari",
+            "description": "A Negroni is an Italian cocktail, made of one part gin, one part vermouth rosso (red, semi-sweet) and one part Campari, garnished with orange peel. It is considered an apéritif.  A traditionally made Negroni is stirred, not shaken; it is built over ice in an old-fashioned or rocks glass and garnished with a slice of orange.",
+            "image": "https://s3-eu-west-1.amazonaws.com/v2.beefeatergin.com/stage/DrinkToMarket/8168/drink/4/drink_500x753.jpeg"
+        },
+        {
+            "id": 13,
+            "name": "Gimlet",
+            "base": "Gin",
+            "ingredient1": "Lime Juice",
+            "ingredient2": "Sugar",
+            "description": "It doesn't get much simpler or more refreshing than the classic Gimlet. Composed of gin, fresh lime juice and sugar, the cocktail is classified as a gin sour, putting it in great company with other tried-and-true drinks. Drinks like the Daiquiri, which is a rum sour.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/3xgldt1513707271.jpg"
+        },
+        {
+            "id": 14,
+            "name": "French 75",
+            "base": "Gin",
+            "ingredient1": "Lemon Juice",
+            "ingredient2": "Sparkling Wine",
+            "description": "French 75 is a cocktail made from gin, champagne, lemon juice, and sugar.  The drink dates to World War I, and an early form was created in 1915 at the New York Bar in Paris by barman Harry MacElhone. The combination was said to have such a kick that it felt like being shelled with the powerful French 75mm field gun.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Bee's Knees",
+            "base": "Gin",
+            "ingredient1": "Lemon Juice",
+            "ingredient2": "Honey",
+            "description": "A bees knees is a Prohibition era cocktail made with gin, fresh lemon juice, and honey.  It is served shaken and chilled, often with a lemon twist.  The name comes from prohibition-era slang meaning 'the best'.",
+            "image": "https://www.liquor.com/thmb/hTaF7jn-EkK3TIe6MwzmJAS1IcU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Bees-Knees-720x720-recipe-793ad392c79043b9b23d6cac075eb0e9.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Manhattan",
+            "base": "Whiskey",
+            "ingredient1": "Vermouth",
+            "ingredient2": "Bitters",
+            "description": "A Manhattan is a cocktail made with whiskey, sweet vermouth, and bitters. While rye is the traditional whiskey of choice, other commonly used whiskies include Canadian whisky, bourbon, blended whiskey, and Tennessee whiskey.  The cocktail is usually stirred then strained into a cocktail glass and garnished traditionally with a maraschino cherry.  Popular history suggests that the drink originated at the Manhattan Club in New York City in the mid-1870s.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/yk70e31606771240.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Old Fashioned",
+            "base": "Whiskey",
+            "ingredient1": "Sugar",
+            "ingredient2": "Bitters",
+            "description": "The old fashioned is a cocktail made by muddling sugar with bitters and water, adding whiskey (typically rye or bourbon), and garnishing with an orange slice or zest and a cocktail cherry.  An old fashioned was one of the simpler and earlier versions of cocktails, before the development of advanced bartending techniques and recipes in the later part of the 19th century.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Brown Derby",
+            "base": "Whiskey",
+            "ingredient1": "Grapefruit Juice",
+            "ingredient2": "Honey",
+            "description": "Created in the 1930s and named after the hat-shaped Los Angeles diner, The classic Brown Derby cocktail features a refreshing blend of bourbon, grapefruit juice and honey syrup.",
+            "image": "https://www.liquor.com/thmb/sdMpJJwfyslWfddZa407m0fTt24=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/brown-derby-720x720-primary-b706bf8f3c2047ef982fdc2a064d437a.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Boulevardier",
+            "base": "Whiskey",
+            "ingredient1": "Vermouth",
+            "ingredient2": "Campari",
+            "description": "The boulevardier cocktail is an alcoholic drink composed of whiskey, sweet vermouth, and Campari.  Its creation is ascribed to Erskine Gwynne, an American-born writer who founded a monthly magazine in Paris called Boulevardier, which appeared from 1927 to 1932.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/km84qi1513705868.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Whiskey Sour",
+            "base": "Whiskey",
+            "ingredient1": "Lemon Juice",
+            "ingredient2": "Sugar",
+            "description": "The whiskey sour is a mixed drink containing whiskey (often bourbon), lemon juice, sugar, and optionally, a dash of egg white. It is a type of sour, a mixed drink with a base spirit, citrus juice, and a sweetener.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Dark and Stormy",
+            "base": "Rum",
+            "ingredient1": "Ginger Beer",
+            "ingredient2": null,
+            "description": "A dark 'n' stormy is a highball cocktail made with dark rum (the 'dark') and ginger beer (the 'stormy') served over ice and garnished with a slice of lime.  The original Dark 'n' Stormy was made with Gosling Black Seal rum and Barritt's Ginger Beer.  Gosling Brothers claims that the drink was invented in Bermuda just after World War I.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/t1tn0s1504374905.jpg"
+        },
+        {
+            "id": 22,
+            "name": "Daquiri",
+            "base": "Rum",
+            "ingredient1": "Lime Juice",
+            "ingredient2": "Sugar",
+            "description": "The Daiquiri was supposedly invented in 1898 in the eponymous mining town of Daiquiri on the southeastern tip of Cuba by an American mining engineer named Jennings Cox. It was introduced in the United States a decade later, when a U.S. Navy medical officer brought the recipe from Cuba to Washington, D.C.",
+            "image": "https://www.liquor.com/thmb/Lj4-pg4Gn-4t4qJfm4BTYVNMVMY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__04__23143458__daiquiri-720x720-recipe-09f1d5665a794eddbbfb997876736136.jpg"
+        },
+        {
+            "id": 23,
+            "name": "Mojito",
+            "base": "Rum",
+            "ingredient1": "Lime Juice",
+            "ingredient2": "Mint",
+            "description": "Mojito is a traditional Cuban punch. The cocktail often consists of five ingredients: white rum, sugar, lime juice, soda water, and mint.  When preparing a mojito, fresh lime juice is added to sugar and mint leaves. The mixture is then gently mashed with a muddler. The mint leaves should only be bruised to release the essential oils and should not be shredded.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg"
+        },
+        {
+            "id": 24,
+            "name": "Mai Tai",
+            "base": "Rum",
+            "ingredient1": "Triple Sec",
+            "ingredient2": "Lime Juice",
+            "description": "The Mai Tai is one of the most famous Tiki drinks in the world. Composed of rum, orange curaçao, fresh lime juice and orgeat (a nuanced almond syrup), it's held sway over cocktail enthusiasts and Tiki aficionados for decades. It even enjoyed a star turn in the Elvis film 'Blue Hawaii.'",
+            "image": "https://www.liquor.com/thmb/QFaWkCkbgqR7glXLi4cnKuKbBDg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mai-tai-720x720-primary-e09e24f1cacd4b3896f5aa32ba51dcdd.jpg"
+        },
+        {
+            "id": 25,
+            "name": "Rum Bay Breeze",
+            "base": "Rum",
+            "ingredient1": "Pineapple Juice",
+            "ingredient2": "Cranberry Juice",
+            "description": "A close relative of the Cape Codder and the Sea Breeze, this cocktail features a blend of Cranberry and Pineapple juices with a base of Rum.  Traditionally this drink is served with Vodka in the base like it's sibings, however, in the past few decades it has also become common to use coconut flavored Rum (i.e. Malibu) as well.",
+            "image": "https://www.liquor.com/thmb/hnz8b1STU1lvUWAyPpSzzUrJ054=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bay-breeze-720x720-primary-71e18f7fb89d4745bdf70c8f043496dc.jpg"
+        }
+    ]
+}
