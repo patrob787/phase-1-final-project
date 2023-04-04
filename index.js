@@ -10,7 +10,7 @@ const shakeBtn = document.getElementById('shake');
 
 let cocktails = [];
 let baseArray = ['Vodka', 'Gin', 'Tequila', 'Whiskey', 'Rum'];
-let ingredientArray = ['Triple Sec', 'Campari', 'Vermouth', 'Bitters', 'Lemon Juice', 'Lime Juice', 'Ginger Beer', 'Sugar', 'Grapefruit', 'Cranberry', 'Pineapple', 'Mint', 'Grenadine', 'Honey', 'Sparkling Wine', 'Tomato Juice'];
+// let ingredientArray = ['Triple Sec', 'Campari', 'Vermouth', 'Bitters', 'Lemon Juice', 'Lime Juice', 'Ginger Beer', 'Sugar', 'Grapefruit', 'Cranberry', 'Pineapple', 'Mint', 'Grenadine', 'Honey', 'Sparkling Wine', 'Tomato Juice'];
 
 
 //Fetch for cocktail files and manipulate data
@@ -157,11 +157,50 @@ function renderBartop() {
     
     let matchingDrink = drinks.find((drink) => {
         let values = Object.values(drink);
-        
-        if (values.includes(drink.ingredient1) && values.includes(drink.ingredient2)) {
+
+        if (shakerIngredients.length === 2) {
+            if (values.includes(shakerIngredients[1])){
+                return drink;
+            }
+        } else if (values.includes(shakerIngredients[1]) && values.includes(shakerIngredients[2])) {
             return drink;
         }
     })
-    console.log(matchingDrink);
+
+    renderDrinkToBartop(matchingDrink);
 }
+
+function renderDrinkToBartop(cocktail) {
+    if (cocktail) {
+    
+        let name = document.createElement('h3');
+        let img = document.createElement('img')
+        let base = document.createElement('p');
+        let desc = document.createElement('p');
+
+        name = cocktail.name;
+        img.src = cocktail.image;
+        base = `Base Liquor: ${cocktail.base}`;
+        desc = `Description: ${cocktail.description}`;
+
+        bartop.append(name, img, base, desc);
+   
+    } else {
+        let h3 = document.createElement('h3');
+        h3.textContent = 'How creative!  Unfortunately your beverage does not match any in our database at this time.  Hit reset to try again!'
+
+        bartop.append(h3);
+    }
+}
+
+//HANDLES RANDOMIZER
+
+pleaseBtn.addEventListener('click', () => {
+    let id = Math.floor(Math.random() * 26)
+    let randomCocktail = cocktails.find(cocktail => cocktail.id === id);
+
+    bartop.innerHTML = "";
+    renderDrinkToBartop(randomCocktail);
+});
+
 
