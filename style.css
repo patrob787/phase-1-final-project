@@ -1,25 +1,49 @@
 body {
-    background-color: rgb(141, 60, 80);
+    background-image: url("https://www.tastingtable.com/img/gallery/why-you-should-consider-pouring-expensive-ingredients-last-in-cocktails/l-intro-1668106033.jpg");
+    background-size: cover;
+    text-align: center;
+
 }
 
 header {
-    background-image: url("https://thumbs.dreamstime.com/b/set-various-cocktails-black-background-set-various-cocktails-shaker-black-background-188649840.jpg");
-    background-size: contain;
+    /* background-image: url("https://thumbs.dreamstime.com/b/set-various-cocktails-black-background-set-various-cocktails-shaker-black-background-188649840.jpg"); */
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    color: white;
+    height: 250px;
+    color: black;
+
   }
   
   section {
       float: left;
-      margin: 75px;
+      margin: 5px;
+
   }
   
-  .container {
-    width: 250px;
-    height: 300px;
-    border: 3px solid #333;
-    background-color: transparent;
-  }
+.container {
+  background-color: transparent;
+  font-size: 34px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 350px;
+  height: 500px;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 2px white
+}
+
+
+button {
+  background-color: crimson;
+  color: #fff;
+  border: 1px solid;
+  padding: 10px;
+  width: 200px;
+  outline: none;
+  margin: auto;
+  border-radius: 10px;
+}
