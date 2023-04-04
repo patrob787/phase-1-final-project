@@ -7,6 +7,7 @@ const bartop = document.getElementById('bar-top');
 const startBtn = document.getElementById('start');
 const pleaseBtn = document.getElementById('please');
 const shakeBtn = document.getElementById('shake');
+const resetBtn = document.getElementById('reset');
 
 let cocktails = [];
 let baseArray = ['Vodka', 'Gin', 'Tequila', 'Whiskey', 'Rum'];
@@ -166,11 +167,14 @@ function renderBartop() {
             return drink;
         }
     })
-
+    
+    resetWell();
     renderDrinkToBartop(matchingDrink);
 }
 
 function renderDrinkToBartop(cocktail) {
+    bartop.innerHTML = "";
+
     if (cocktail) {
     
         let name = document.createElement('h3');
@@ -199,9 +203,18 @@ pleaseBtn.addEventListener('click', () => {
     let id = Math.floor(Math.random() * 26)
     let randomCocktail = cocktails.find(cocktail => cocktail.id === id);
 
-    bartop.innerHTML = "";
     renderDrinkToBartop(randomCocktail);
 });
 
+//HANDLES RESET
 
+resetBtn.addEventListener('click', () => {
+    resetWell();
+    bartop.innerHTML = "";
+})
 
+function resetWell(){
+    well.innerHTML = "";
+    shaker.innerHTML = "";
+    renderBaseLiquor(baseArray);
+};
