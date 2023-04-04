@@ -106,6 +106,8 @@ function dragLeave(e) {
     //console.log(e)
 };
 
+
+//Make below into function
 well.addEventListener('dragenter', dragEnter);
 well.addEventListener('dragover', dragOver);
 well.addEventListener('dragleave', dragLeave);
@@ -130,7 +132,8 @@ shaker.addEventListener('drop', (e) => {
     
     if (baseArray.includes(id)) {
         well.innerHTML = "";
-        renderIngredients(ingredientArray);
+        let ingredients = grabIngredients(id);
+        renderIngredients(ingredients);
     };
     
     e.target.appendChild(draggable);
