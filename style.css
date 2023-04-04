@@ -1,7 +1,8 @@
 body {
     background-image: url("https://www.tastingtable.com/img/gallery/why-you-should-consider-pouring-expensive-ingredients-last-in-cocktails/l-intro-1668106033.jpg");
     background-size: cover;
-    
+    text-align: center;
+
 }
 
 header {
@@ -12,19 +13,37 @@ header {
     align-items: center;
     height: 250px;
     color: black;
+
   }
   
   section {
       float: left;
       margin: 5px;
+
   }
   
 .container {
   background-color: transparent;
   font-size: 34px;
-  border: 2px solid #1576C1;
+  border: 2px solid black;
   border-radius: 10px;
   width: 350px;
-  height: 350px;
+  height: 500px;
 }
 
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 2px white
+}
+
+
+button {
+  background-color: crimson;
+  color: #fff;
+  border: 1px solid;
+  padding: 10px;
+  width: 200px;
+  outline: none;
+  margin: auto;
+  border-radius: 10px;
+}

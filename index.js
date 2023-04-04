@@ -3,17 +3,14 @@ console.log('js is running')
 //Variable Resource
 const well = document.getElementById('well');
 const shaker = document.getElementById('shaker');
+const bartop = document.getElementById('bar-top');
 const startBtn = document.getElementById('start');
 const pleaseBtn = document.getElementById('please');
+const shakeBtn = document.getElementById('shake');
+
 let cocktails = [];
 let baseArray = ['Vodka', 'Gin', 'Tequila', 'Whiskey', 'Rum'];
 let ingredientArray = ['Triple Sec', 'Campari', 'Vermouth', 'Bitters', 'Lemon Juice', 'Lime Juice', 'Ginger Beer', 'Sugar', 'Grapefruit', 'Cranberry', 'Pineapple', 'Mint', 'Grenadine', 'Honey', 'Sparkling Wine', 'Tomato Juice'];
-let teqIngredients = [];
-let whiskeyIngredients = [];
-let vodkaIngredients = [];
-let rumIngredients = [];
-let ginIngredients = [];
-
 
 
 //Fetch for cocktail files and manipulate data
@@ -21,12 +18,6 @@ fetch("http://localhost:3000/Cocktails")
 .then(resp => resp.json())
 .then(data => {
     cocktails = data
-    
-    teqIngredients = grabIngredients('Tequila');
-    vodkaIngredients = grabIngredients('Vodka');
-    rumIngredients = grabIngredients('Rum');
-    ginIngredients = grabIngredients('Gin');
-    whiskeyIngredients = grabIngredients('Whiskey');
 })
 
 startBtn.addEventListener('click', () => {
@@ -43,8 +34,15 @@ function grabIngredients(liquor) {
     let ingredients = [];
     let drinks = cocktails.filter(drink => drink.base === liquor);
     drinks.forEach((drink) => {
-        ingredients.push(drink.ingredient1, drink.ingredient2)
+        if (typeof drink.ingredient1 === 'string') {
+        ingredients.push(drink.ingredient1)
+        };
+        
+        if (typeof drink.ingredient2 === 'string') {
+            ingredients.push(drink.ingredient2)
+        };
     })
+
     ingredients = new Set(ingredients);
     return ingredients;
 }
@@ -93,6 +91,8 @@ function renderIngredients(array) {
     })
 }
 
+
+
 //Drag and Drop functions
 function dragEnter(e) {
     e.preventDefault();
@@ -106,6 +106,8 @@ function dragLeave(e) {
     //console.log(e)
 };
 
+
+//HANDLES DRAG AND DROP
 
 //Make below into function
 well.addEventListener('dragenter', dragEnter);
@@ -132,9 +134,33 @@ shaker.addEventListener('drop', (e) => {
     
     if (baseArray.includes(id)) {
         well.innerHTML = "";
+        draggable.draggable = false;
         let ingredients = grabIngredients(id);
         renderIngredients(ingredients);
     };
     
     e.target.appendChild(draggable);
 })
+
+//Handles Bartop Rendering
+shakeBtn.addEventListener('click', renderBartop);
+
+//Renders Drink to Bartop
+function renderBartop() {
+    let shakerIngredients = [];
+    let shakerElements = shaker.querySelectorAll('button');
+    shakerElements.forEach((element) => {
+        shakerIngredients.push(element.textContent);
+    })
+    
+    let drinks = cocktails.filter(drink => drink.base === shakerIngredients[0]);
+    
+    let matchingDrink = drinks.find((drink) => {
+        let values = Object.values(drink);
+        
+        if (values.includes(drink.ingredient1) && values.includes(drink.ingredient2)) {
+            return drink;
+        }
+    })
+    console.log(matchingDrink);
+}
