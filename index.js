@@ -182,23 +182,23 @@ function renderDrinkToBartop(cocktail) {
 
     if (cocktail) {
     
-        let name = document.createElement('h3');
+        let name = document.createElement('h4');
         let img = document.createElement('img')
         let base = document.createElement('p');
         let desc = document.createElement('p');
 
-        name = cocktail.name;
+        name.textContent = cocktail.name;
         img.src = cocktail.image;
-        base = `Base Liquor: ${cocktail.base}`;
-        desc = `Description: ${cocktail.description}`;
+        base.textContent = `Base Liquor: ${cocktail.base}`;
+        desc.textContent = `Description: ${cocktail.description}`;
 
         bartop.append(img, name, base, desc);
-   
+        
     } else {
-        let h3 = document.createElement('h3');
-        h3.textContent = 'How creative!  Unfortunately, we will be unable to serve you your fine concoction at this time.  Hit reset to try again!'
+        let h4 = document.createElement('h4');
+        h4.textContent = 'How creative!  Unfortunately, we will be unable to serve you your fine concoction at this time.  Hit reset to try again!'
 
-        bartop.append(h3);
+        bartop.append(h4);
     }
 }
 

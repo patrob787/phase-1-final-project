@@ -21,7 +21,9 @@ section {
 }
 
 .container {
-  background: rgba(265, 165, 0, 30%);
+  background: rgba(265, 165, 0, 50%);
+  background-repeat: no-repeat;
+  position: relative;
   font-size: 30px;
   border: 2px solid black;
   border-radius: 10px;
@@ -32,7 +34,12 @@ section {
 h1 {
   text-align: center;
   text-shadow: 2px 2px 2px white;
-  font-size: 50px;
+  font-size: 60px;
+}
+
+#quote {
+  font-size: 20px;
+  margin-top: 0px;
 }
 
 h2 {
@@ -49,4 +56,33 @@ button {
   outline: none;
   margin: auto;
   border-radius: 10px;
+}
+
+#bar-top {
+  display: block;
+  padding: 5px;
+  text-align: left;
+}
+
+#bar-top h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  text-shadow: 2px 2px 2px white;
+}
+
+#bar-top p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+img {
+  position: flex;
+  height: 40%;
+  width: auto;
+  max-width: 70%;
+  margin: 5px 5px 5px 5px;
+  border: 2px solid rgb(157, 43, 66)
 }
