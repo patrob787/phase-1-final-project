@@ -2,7 +2,7 @@ body {
   background-image: url("https://www.tastingtable.com/img/gallery/why-you-should-consider-pouring-expensive-ingredients-last-in-cocktails/l-intro-1668106033.jpg");
   background-size: cover;
   text-align: center;
-  font-family: Trattatello, fantasy;
+  font-family: Courgette;
 }
 
 header {
@@ -13,6 +13,7 @@ header {
   align-items: center;
   height: 100px;
   color: black;
+  font-family: Trattatello, fantasy;
 }
 
 #top-div {
@@ -24,14 +25,38 @@ section {
   margin: 5px 5px 5px 5px;
 }
 
-.container {
-  background: rgba(265, 165, 0, 50%);
+.container1 {
+  background: rgba(265, 165, 0, 30%);
   background-repeat: no-repeat;
   position: relative;
   font-size: 30px;
   border: 2px solid black;
   border-radius: 10px;
-  width: 400px;
+  width: 250px;
+  height: 600px;
+  padding: 10px;
+}
+
+.container2 {
+  background: rgba(265, 165, 0, 30%);
+  background-repeat: no-repeat;
+  position: relative;
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 250px;
+  height: 600px;
+  padding: 10px;
+}
+
+.container3 {
+  background: rgba(265, 165, 0, 30%);
+  background-repeat: no-repeat;
+  position: relative;
+  font-size: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 600px;
   height: 600px;
   padding: 10px;
 }
@@ -93,9 +118,9 @@ button {
 
 img {
   position: flex;
-  height: 40%;
+  height: 60%;
   width: auto;
   max-width: 70%;
   margin: 5px 5px 5px 5px;
-  border: 2px solid rgb(157, 43, 66)
+  border: 2px solid #fff;
 }
