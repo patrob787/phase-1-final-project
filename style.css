@@ -26,7 +26,7 @@ section {
 }
 
 .container {
-  background: rgba(265, 165, 0, 40%);
+  background: rgba(265, 165, 0, 50%);
   background-repeat: no-repeat;
   position: relative;
   font-size: 30px;
@@ -62,16 +62,26 @@ button {
 
 #well {
   width: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
-#well h3 {
+#well div {
+  display: contents;
+}
+
+h3 {
   font-family: Trattatello, fantasy;
 }
 
 #shaker {
-  display: grid;
-  align-content: space-evenly;
+  display: flex;
+  flex-direction: column;
   width: 250px;
+}
+
+#shaker div {
+  display: contents;
 }
 
 #bar-top {
@@ -79,13 +89,30 @@ button {
   width: 600px;
 }
 
+#bar-top div {
+  display: flex;
+  height: 50%;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#bar-top div div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-family: trattatello, fantasy;
+}
+
 #bar-top h4 {
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 5px;
   position: relative;
+  font-size: 2.7rem;
   font-family: trattatello, fantasy;
-  font-size: 2rem;
   text-shadow: 1px 1px 1px white;
 }
 
@@ -93,14 +120,14 @@ button {
   margin-top: 0px;
   margin-bottom: 5px;
   margin-left: 5px;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   line-height: 1.4;
 }
 
 img {
-  position: flex;
-  height: 50%;
-  width: auto;
+  height: 100%;
+  width: 50%;
   max-width: 70%;
   margin: 5px 5px 5px 5px;
   border: 2px solid #fff;
