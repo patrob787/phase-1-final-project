@@ -142,3 +142,11 @@ button:hover {
   border-color: white;
   background-color: rgb(255, 128, 0, 75%);
 }
+
+#countdown {
+  color: white;
+  font-Family: Trattatello;
+  font-size: 2.3rem;
+  text-shadow: 2px 2px black;
+  letter-spacing: 3px;
+}

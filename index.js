@@ -229,3 +229,30 @@ function resetWell(){
     shakerContents.innerHTML = "";
     renderBaseLiquor(baseArray);
 };
+
+//Countdown Clock
+let clock = document.getElementById('countdown');
+
+function countDownClock() {
+        let today = new Date();
+        let countDownDate = today.setHours(17, 0, 0);
+        let now = new Date().getTime();
+
+        console.log(countDownDate - now);
+        
+        if (countDownDate - now < 0) {
+            countDownDate = countDownDate + (1000 * 60 * 60 * 24);
+            timeLeft = countDownDate - now; 
+        }
+        console.log(countDownDate, now, timeLeft);
+        
+        let hours = Math.floor(timeLeft % (1000 * 60 * 60 *24) / (1000 * 60 * 60))
+        let minutes = Math.floor(timeLeft % (1000 * 60 * 60) / (1000 * 60))
+        let seconds = Math.floor(timeLeft % (1000 * 60) / 1000)
+        
+
+        clock.textContent = `${hours}hrs, ${minutes}min and ${seconds}sec left 'till happy hour!`
+        setInterval(countDownClock, 1000);
+}
+
+countDownClock();
