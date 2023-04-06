@@ -62,18 +62,26 @@ button {
 
 #well {
   width: 250px;
-  display: grid;
-  align-content: space-evenly;
+  display: flex;
+  flex-direction: column;
 }
 
-#well h3 {
+#well div {
+  display: contents;
+}
+
+h3 {
   font-family: Trattatello, fantasy;
 }
 
 #shaker {
-  display: grid;
-  align-content: space-evenly;
+  display: flex;
+  flex-direction: column;
   width: 250px;
+}
+
+#shaker div {
+  display: contents;
 }
 
 #bar-top {

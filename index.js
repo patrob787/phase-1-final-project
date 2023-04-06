@@ -3,6 +3,7 @@ console.log('js is running')
 //Variable Resource
 const well = document.getElementById('well');
 const shaker = document.getElementById('shaker');
+const shakerContents = document.createElement('div')
 const bartop = document.getElementById('bar-top');
 const startBtn = document.getElementById('start');
 const pleaseBtn = document.getElementById('please');
@@ -36,6 +37,7 @@ pleaseBtn.addEventListener('click', () => {
     let randomCocktail = cocktails.find(cocktail => cocktail.id === id);
 
     renderDrinkToBartop(randomCocktail);
+    resetWell();
 });
 
 //Handles Reset
@@ -73,7 +75,7 @@ shaker.addEventListener('drop', (e) => {
         renderIngredients(ingredients);
     };
     
-    e.target.appendChild(draggable);
+    shakerContents.appendChild(draggable);
 })
 
 
@@ -81,9 +83,14 @@ shaker.addEventListener('drop', (e) => {
 
 //Render Base Liquor buttons to Well
 function renderBaseLiquor(array) {
-    let h3 = document.createElement('h3');
-    h3.textContent = 'Pick your POISON...';
-    well.append(h3);
+    let h3Well = document.createElement('h3');
+    h3Well.textContent = 'Pick your POISON...';
+    well.append(h3Well);
+
+    let h3Shaker = document.createElement('h3');
+    h3Shaker.textContent = '...and drop here.';
+    
+    shaker.append(h3Shaker, shakerContents);
     
     renderDraggables(array)
 }
@@ -99,6 +106,7 @@ function renderIngredients(array) {
 
 //Render Draggables
 function renderDraggables(array) {
+    let btnDiv = document.createElement('div');
     array.forEach((item) => {
         let btn = document.createElement('button');
         btn.textContent = item;
@@ -111,9 +119,10 @@ function renderDraggables(array) {
             e.target.classList.add('enroute');
             setTimeout(() => {e.target.hidden = true;})
         }, 0)        
-
-        well.append(btn);
+        
+        btnDiv.append(btn)
     })
+    well.append(btnDiv);
 }
 
 //Grabs unique indredients for each drink by base liquor
@@ -216,5 +225,6 @@ function renderDrinkToBartop(cocktail) {
 function resetWell(){
     well.innerHTML = "";
     shaker.innerHTML = "";
+    shakerContents.innerHTML = "";
     renderBaseLiquor(baseArray);
 };
