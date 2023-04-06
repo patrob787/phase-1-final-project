@@ -82,7 +82,7 @@ shaker.addEventListener('drop', (e) => {
 //Render Base Liquor buttons to Well
 function renderBaseLiquor(array) {
     let h3 = document.createElement('h3');
-    h3.textContent = 'Pick a Base';
+    h3.textContent = 'Pick your POISON...';
     well.append(h3);
     
     renderDraggables(array)
