@@ -51,7 +51,8 @@ addDragEvents(well);
 addDragEvents(shaker);
 
 well.addEventListener('drop', (e) => {
-    
+    e.target.classList.remove('dragover');
+
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
     draggable.hidden = false;
@@ -59,7 +60,8 @@ well.addEventListener('drop', (e) => {
 })
 
 shaker.addEventListener('drop', (e) => {
-    
+    e.target.classList.remove('dragover');
+
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
     draggable.hidden = false;
@@ -80,7 +82,7 @@ shaker.addEventListener('drop', (e) => {
 //Render Base Liquor buttons to Well
 function renderBaseLiquor(array) {
     let h3 = document.createElement('h3');
-    h3.textContent = 'Pick a Base';
+    h3.textContent = 'Pick your POISON...';
     well.append(h3);
     
     renderDraggables(array)
@@ -106,6 +108,7 @@ function renderDraggables(array) {
 
         btn.addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('text/plain', e.target.id);
+            e.target.classList.add('enroute');
             setTimeout(() => {e.target.hidden = true;})
         }, 0)        
 
@@ -134,14 +137,16 @@ function grabIngredients(liquor) {
 //Drag and Drop functions
 function dragEnter(e) {
     e.preventDefault();
+    e.target.classList.add('dragover')
 };
 
 function dragOver(e) {
     e.preventDefault();
+    e.target.classList.add('dragover')
 };
 
 function dragLeave(e) {
-    //console.log(e)
+    e.target.classList.remove('dragover')
 };
 
 function addDragEvents(div) {
