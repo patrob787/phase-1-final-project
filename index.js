@@ -54,12 +54,13 @@ addDragEvents(shaker);
 
 well.addEventListener('drop', (e) => {
     e.target.classList.remove('dragover');
-
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
     draggable.hidden = false;
-    e.target.appendChild(draggable);
+
+    well.appendChild(draggable);
 })
+
 
 shaker.addEventListener('drop', (e) => {
     e.target.classList.remove('dragover');
