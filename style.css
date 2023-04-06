@@ -11,7 +11,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 70px;
   color: black;
 }
 
@@ -66,13 +66,20 @@ button {
   border-radius: 10px;
 }
 
+#well {
+  width: 300px;
+}
+
 #shaker {
   display: grid;
   align-content: space-evenly;
+  height: 600px;
+  width: 300px;
 }
 
 #bar-top {
   text-align: left;
+  width: 600px;
 }
 
 #bar-top h4 {
@@ -80,6 +87,7 @@ button {
   margin-bottom: 0px;
   margin-left: 5px;
   position: relative;
+  font-size: 2rem;
   text-shadow: 1px 1px 1px white;
 }
 
@@ -87,15 +95,24 @@ button {
   margin-top: 0px;
   margin-bottom: 5px;
   margin-left: 5px;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   line-height: 1.4;
 }
 
 img {
-  position: flex;
-  height: 40%;
+  height: 50%;
   width: auto;
   max-width: 70%;
   margin: 5px 5px 5px 5px;
   border: 2px solid rgb(157, 43, 66)
+}
+
+button:hover {
+  background-color: rgb(255, 74, 110);
+}
+
+.dragover {
+  color: white;
+  border-color: white;
+  background-color: rgb(255, 128, 0, 75%);
 }
