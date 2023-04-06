@@ -186,7 +186,9 @@ function renderDrinkToBartop(cocktail) {
     bartop.innerHTML = "";
 
     if (cocktail) {
-    
+        let nameBaseDiv = document.createElement('div');
+        let combineDiv = document.createElement('div');
+
         let name = document.createElement('h4');
         let img = document.createElement('img')
         let base = document.createElement('p');
@@ -197,7 +199,10 @@ function renderDrinkToBartop(cocktail) {
         base.textContent = `Base Liquor: ${cocktail.base}`;
         desc.textContent = `Description: ${cocktail.description}`;
 
-        bartop.append(img, name, base, desc);
+        nameBaseDiv.append(name, base);
+        combineDiv.append(nameBaseDiv, img);
+
+        bartop.append(combineDiv, desc);
         
     } else {
         let h4 = document.createElement('h4');
