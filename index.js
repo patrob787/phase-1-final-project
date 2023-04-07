@@ -23,8 +23,6 @@ fetch("http://localhost:3000/Cocktails")
 })
 
 
-
-
 //BUTTONS
 
 //Handles Start Button
