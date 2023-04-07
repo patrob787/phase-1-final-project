@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 startBtn.addEventListener('click', () => {
     renderBaseLiquor(baseArray);
     startBtn.hidden = true;
+    searchBtn.hidden = true;
 })
 
 //Handles Bartop Rendering
@@ -253,3 +254,26 @@ function countDownClock() {
         clock.textContent = `${hours}hrs, ${minutes}min and ${seconds}sec left 'till happy hour!`
         setInterval(countDownClock, 1000);
 }
+
+//SEARCH BAR
+const searchBtn = document.getElementById('search');
+let form = document.getElementById('search-form');
+
+searchBtn.addEventListener('click', () => {
+    startBtn.hidden = true;
+    searchBtn.hidden = true;
+    form.hidden = false;
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(e);
+
+    let input = e.target.text.value;
+    let rawInput = input.trim().toLowerCase();
+
+    let matchingDrink = cocktails.find((cocktail) => rawInput === cocktail.name.toLowerCase());
+    console.log(matchingDrink);
+
+    renderDrinkToBartop(matchingDrink);
+})
