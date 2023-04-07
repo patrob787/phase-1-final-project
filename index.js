@@ -240,10 +240,13 @@ function countDownClock() {
         let today = new Date();
         let countDownDate = today.setHours(17, 0, 0);
         let now = new Date().getTime();
+        let timeLeft;
 
         if (countDownDate - now < 0) {
             countDownDate = countDownDate + (1000 * 60 * 60 * 24);
             timeLeft = countDownDate - now; 
+        } else {
+            timeLeft = countDownDate - now;
         }
         
         let hours = Math.floor(timeLeft % (1000 * 60 * 60 *24) / (1000 * 60 * 60))
