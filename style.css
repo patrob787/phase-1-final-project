@@ -19,10 +19,12 @@ header {
 #top-div {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 section {
-  margin: 5px 5px 5px 5px;
+  height: 70%;
+  float: left;
 }
 
 .container {
@@ -39,7 +41,7 @@ section {
 h1 {
   text-align: center;
   text-shadow: 2px 2px 2px white;
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 h2 {
