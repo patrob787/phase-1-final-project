@@ -150,3 +150,8 @@ button:hover {
   text-shadow: 2px 2px black;
   letter-spacing: 3px;
 }
+
+#search-bar {
+  height: 50px;
+  width: 200px;
+}

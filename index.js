@@ -15,12 +15,14 @@ let baseArray = ['Vodka', 'Gin', 'Tequila', 'Whiskey', 'Rum'];
 
 
 //Fetch for cocktail files and manipulate data
-document.addEventListener('DOMContentLoaded', () => {
-    fetch("http://localhost:3000/Cocktails")
-    .then(resp => resp.json())
-    .then(data => { cocktails = data })
+fetch("http://localhost:3000/Cocktails")
+.then(resp => resp.json())
+.then(data => { 
+    cocktails = data 
     countDownClock();
-});
+})
+
+
 
 
 //BUTTONS
@@ -29,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 startBtn.addEventListener('click', () => {
     renderBaseLiquor(baseArray);
     startBtn.hidden = true;
+    searchBtn.hidden = true;
 })
 
 //Handles Bartop Rendering
@@ -61,7 +64,7 @@ well.addEventListener('drop', (e) => {
     const draggable = document.getElementById(id);
     draggable.hidden = false;
 
-    well.appendChild(draggable);
+    wellContainer.appendChild(draggable);
 })
 
 
@@ -73,7 +76,7 @@ shaker.addEventListener('drop', (e) => {
     draggable.hidden = false;
     
     if (baseArray.includes(id)) {
-        well.innerHTML = "";
+        wellContainer.innerHTML = "";
         draggable.draggable = false;
         let ingredients = grabIngredients(id);
         renderIngredients(ingredients);
@@ -89,11 +92,10 @@ shaker.addEventListener('drop', (e) => {
 function renderBaseLiquor(array) {
     let h3Well = document.createElement('h3');
     h3Well.textContent = 'Pick your POISON...';
-    well.append(h3Well);
+    wellContainer.append(h3Well);
 
     let h3Shaker = document.createElement('h3');
     h3Shaker.textContent = '...and drop here.';
-    
     shaker.append(h3Shaker, shakerContents);
     
     renderDraggables(array)
@@ -103,7 +105,7 @@ function renderBaseLiquor(array) {
 function renderIngredients(array) {
     let h3 = document.createElement('h3');
     h3.textContent = 'Pick 2 Ingredients';
-    well.append(h3);
+    wellContainer.append(h3);
     
     renderDraggables(array);
 }
@@ -126,7 +128,7 @@ function renderDraggables(array) {
         
         btnDiv.append(btn)
     })
-    well.append(btnDiv);
+    wellContainer.append(btnDiv);
 }
 
 //Grabs unique indredients for each drink by base liquor
@@ -226,14 +228,20 @@ function renderDrinkToBartop(cocktail) {
 }
 
 //Clears the shaker and resets the well to base liquor draggables
+let wellContainer = document.getElementById('ingredients-container');
+
 function resetWell(){
-    well.innerHTML = "";
     shaker.innerHTML = "";
     shakerContents.innerHTML = "";
-    renderBaseLiquor(baseArray);
+    wellContainer.innerHTML = "";
+    
+    form.hidden = true;
+    clearBtn.hidden = true;
+    startBtn.hidden = false;
+    searchBtn.hidden = false;
 };
 
-//Countdown Clock
+//COUNTDOWN CLOCK
 let clock = document.getElementById('countdown');
 
 function countDownClock() {
@@ -256,3 +264,33 @@ function countDownClock() {
         clock.textContent = `${hours}hrs, ${minutes}min and ${seconds}sec left 'till happy hour!`
         setInterval(countDownClock, 1000);
 }
+
+//SEARCH BAR - CLEAR BUTTON
+const searchBtn = document.getElementById('search');
+const clearBtn = document.getElementById('clear')
+let form = document.getElementById('search-form');
+
+searchBtn.addEventListener('click', () => {
+    startBtn.hidden = true;
+    searchBtn.hidden = true;
+    form.hidden = false;
+    clearBtn.hidden = false;
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(e);
+
+    let input = e.target.text.value;
+    let rawInput = input.trim().toLowerCase();
+
+    let matchingDrink = cocktails.find((cocktail) => rawInput === cocktail.name.toLowerCase());
+    console.log(matchingDrink);
+
+    renderDrinkToBartop(matchingDrink);
+})
+
+clearBtn.addEventListener('click', () => {
+    bartop.innerHTML = "";
+    form.reset();
+})

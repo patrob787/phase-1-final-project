@@ -15,9 +15,17 @@
         <section>
             <h2>THE WELL</h2>
             <div id="well" class="container">
-              <br>
-              <button id="start">START MIXING</button>
-              <div id="ingredients-container"></div>
+                <br>
+                <button id="start">START MIXING</button>
+                <button id="search">SEARCH FOR A BEVY</button>
+                <form hidden id="search-form">
+                    <h3>Tell the Bartender What You Want...</h3>
+                    <input id="search-bar" type="text" name="text" placeholder="Tell the bartender what you want..."/><br><br>
+                    <button id="submit" type="submit" name="submit">SUBMIT</button><br><br>
+                </form>
+                <button hidden id="clear">CLEAR</button>
+            
+                <div id="ingredients-container"></div>
           </div>
           <br>
           <button id="please">SURPRISE ME!</button>
